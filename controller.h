@@ -5,7 +5,8 @@ class Controller{
 
         double error;
         double errorIntegral;
-        double lastError = 0;
+        double lastError;
+        double checkFirst;//Variable to check if the calculation of the error is done for the first time in order to initialize derivative control properly.
 
         double proportionalGain;
         double integralGain;
