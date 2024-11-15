@@ -5,6 +5,7 @@ class Controller{
 
         double error;
         double errorIntegral;
+        double lastError = 0;
 
         double proportionalCoefficient;
         double integralCoefficient;

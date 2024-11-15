@@ -10,7 +10,7 @@ double Controller::calculateOutput(double stateCurrent){
     this->calculateError();
 
     double outputProportional = this->proportionalCoefficient * this->error;
-    double outputIntegral = 0;
+    double outputIntegral = this->integralCoefficient * this->errorIntegral;
     double outputDerivative = 0;
 
     return outputProportional + outputIntegral + outputDerivative;

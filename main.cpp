@@ -9,7 +9,7 @@ int main(void) {
     outputFile = fopen("data.txt", "w");
     if(outputFile == NULL){std::cout << "Error opening file"; return 0;}
 
-    Controller controller = Controller(0.2, 0.2, 0.2);
+    Controller controller = Controller(0.2, 0.2, 0);
 
     double goalState = 50;
     double currentState = 20;
@@ -20,7 +20,7 @@ int main(void) {
 
     fprintf(outputFile, "%d,%lf\n", 1,  currentState);
     std::cout<<currentState<<"\n";  
-    for (int i = 2; i < 100; i++){
+    for (int i = 2; i < 150; i++){
         
         currentState += controller.calculateOutput(currentState) - hoverVelocity; 
 
