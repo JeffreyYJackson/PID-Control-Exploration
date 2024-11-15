@@ -7,12 +7,12 @@ class Controller{
         double errorIntegral;
         double lastError = 0;
 
-        double proportionalCoefficient;
-        double integralCoefficient;
-        double derivativeCoefficient;
+        double proportionalGain;
+        double integralGain;
+        double derivativeGain;
 
         Controller(double proportional, double integral, double derivative):
-            proportionalCoefficient(proportional), integralCoefficient(integral), derivativeCoefficient(derivative){}
+            proportionalGain(proportional), integralGain(integral), derivativeGain(derivative){}
 
         void setGoal(double newGoal);
         void calculateError();

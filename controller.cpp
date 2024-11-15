@@ -9,9 +9,11 @@ double Controller::calculateOutput(double stateCurrent){
     this->state = stateCurrent;
     this->calculateError();
 
-    double outputProportional = this->proportionalCoefficient * this->error;
-    double outputIntegral = this->integralCoefficient * this->errorIntegral;
-    double outputDerivative = 0;
+    double outputProportional = this->proportionalGain * this->error;
+    double outputIntegral = this->integralGain * this->errorIntegral;
+    double outputDerivative = this->derivativeGain * (this->error - this->lastError);
+
+    this->lastError = this->error;
 
     return outputProportional + outputIntegral + outputDerivative;
 }
